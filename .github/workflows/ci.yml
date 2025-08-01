@@ -1,0 +1,31 @@
+name: CI - Data Wrangler Project
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout do código
+        uses: actions/checkout@v3
+
+      - name: 🔧 Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: 💼 Instalar Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: 📦 Instalar dependências com Poetry
+        run: poetry install --no-interaction
+
+      - name: 🛠 Rodar tarefa de checagem
+        run: poetry run task check
