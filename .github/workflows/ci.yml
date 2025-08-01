@@ -25,7 +25,7 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: 📦 Instalar dependências com Poetry
-        run: poetry install --no-interaction
+        run: poetry install --all-extras
 
       - name: 🛠 Rodar tarefa de checagem
         run: poetry run task check
