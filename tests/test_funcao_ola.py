@@ -2,5 +2,6 @@
 
 from app.main import funcao_ola
 
+
 def test_funcao_ola():
     assert funcao_ola() == "Olá, mundo!"
