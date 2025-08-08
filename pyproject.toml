@@ -25,6 +25,8 @@ pandera = "^0.25.0"
 psycopg2 = "^2.9.10"
 python-dotenv = "^1.1.1"
 sqlalchemy = "^2.0.42"
+pyyaml = "^6.0.2"
+frictionless = "^5.18.1"
 
 
 [tool.poetry.group.dev.dependencies]
