@@ -29,3 +29,6 @@ jobs:
 
       - name: 🛠 Rodar tarefa de checagem
         run: poetry run task check
+
+      - name: Rodar testes
+        run: poetry run task test
